@@ -2,7 +2,7 @@ name: GF-OCT Phase 1A Falsification
 
 on:
   push:
-    branches: ["phase1a-falsification"]
+    branches: ["main", "phase1a-falsification"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:
