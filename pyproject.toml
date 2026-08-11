@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gf-oct"
-version = "0.1.0"
+version = "0.2.0"
 description = "Preregistered falsification engine for Google Flow Optimal Control Theory"
 requires-python = ">=3.10"
 dependencies = [
@@ -19,6 +19,7 @@ test = ["pytest>=8.0"]
 
 [project.scripts]
 gf-oct-phase1a = "gf_oct.cli:main"
+gf-oct-phase1b = "gf_oct.phase1b:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
