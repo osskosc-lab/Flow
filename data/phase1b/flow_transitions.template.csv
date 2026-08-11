@@ -1,0 +1,2 @@
+episode_id,step,model_tier,operator,prompt_policy,policy_type,q_macro_before,q_macro_after,q_micro_before,q_micro_after,q_total_before,q_total_after,credit_cost,reached_target,terminal,source,model_name,controller_id,evaluator_id,timestamp_utc,artifact_uri
+RF0001,1,high,generate,none,heuristic,0.000,0.000,0.000,0.000,0.000,0.000,0,0,0,real_google_flow,REPLACE_WITH_EXACT_FLOW_MODEL,controller-v1,evaluator-v1,2026-08-11T00:00:00Z,REPLACE_WITH_ARTIFACT_REFERENCE
