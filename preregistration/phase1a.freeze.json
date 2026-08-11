@@ -1,0 +1,31 @@
+{
+  "project": "GF-OCT Phase 1A Simulation Falsification",
+  "version": "1.0.0",
+  "frozen_utc": "2026-08-11T01:15:00Z",
+  "seed": 20260811,
+  "n_episodes_per_arm": 200,
+  "max_steps": 10,
+  "target_quality": 0.90,
+  "bootstrap_B": 2000,
+  "alpha": 0.05,
+  "thresholds": {
+    "H1_min_rmst_advantage_steps": 0.50,
+    "H2_min_eta_advantage": 0.0005,
+    "H3_macro_equivalence_margin": 0.05,
+    "H4_min_delta_prompt_drift_reduction": 0.02,
+    "H5_min_policy_cost_advantage": 5.0,
+    "H6_history_rmse_ratio_support": 0.90
+  },
+  "loss": {
+    "lambda_macro": 300.0,
+    "lambda_micro": 150.0
+  },
+  "confirmatory_rules": {
+    "H1": "SUPPORTED iff upper 95% CI of RMST_high_minus_low <= -0.50; FALSIFIED iff lower 95% CI >= 0; otherwise INCONCLUSIVE",
+    "H2": "SUPPORTED iff lower 95% CI of eta_high_minus_low >= 0.0005; FALSIFIED iff upper 95% CI <= 0; otherwise INCONCLUSIVE",
+    "H3": "SUPPORTED iff upper 95% CI of mean absolute macro drift after edit <= 0.05; FALSIFIED iff lower 95% CI > 0.05; otherwise INCONCLUSIVE",
+    "H4": "SUPPORTED iff upper 95% CI of drift_delta_minus_full <= -0.02; FALSIFIED iff lower 95% CI >= 0; otherwise INCONCLUSIVE",
+    "H5": "SUPPORTED iff upper 95% CI of J_learned_minus_heuristic <= -5; FALSIFIED iff lower 95% CI >= 0; otherwise INCONCLUSIVE",
+    "H6": "SUPPORTED iff upper 95% CI of RMSE_history/RMSE_markov <= 0.90; FALSIFIED iff lower 95% CI >= 1.00; otherwise INCONCLUSIVE"
+  }
+}
